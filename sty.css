@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight:400;
+  /*overflow-x: hidden;  Prevent horizontal overflow */
+}
+
+
+* {
+  margin: 0;
+  max-width: 100%;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+:before,
+:after {
+  box-sizing: border-box;
+}
+header,section,footer{
+display:block;
+width:100%;
+}
+.containers{
+max-width:1140px;
+margin:auto;
+}
+
+
+:root {
+  --primary-hue: 200;
+  --color-primary: #EC407A;
+  --color-nav-bg: hsla(var(--primary-hue), 0%, 100%, 0.4);
+  --color-gray-100: hsl(var(--primary-hue), 0%, 100%);
+  --color-gray-200: hsl(var(--primary-hue), 0%, 95%);
+  --color-gray-300: hsl(var(--primary-hue), 0%, 85%);
+  --color-gray-400: hsl(var(--primary-hue), 0%, 70%);
+  --color-gray-500: hsl(var(--primary-hue), 0%, 55%);
+  --color-gray-600: hsl(var(--primary-hue), 0%, 40%);
+  --color-gray-700: hsl(var(--primary-hue), 0%, 25%);
+  --color-gray-800: hsl(var(--primary-hue), 0%, 15%);
+  --color-gray-900: hsl(var(--primary-hue), 0%, 5%);
+}
+
+.rows{
+display:flex;
+  flex-wrap:wrap;
+}
+.justify-content-between{
+  justify-content:space-between;
+}
+
+.align-items-center{
+  align-items:center;
+}
+/* header */
+.header{
+  position:fixed;
+  width:100%;
+  left:0;
+  top:0;
+  z-index:99;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  transition:all 0.5s ease;
+}
+
+.header.fixed{
+  background-color:#ffffff;
+  box-shadow:0 0 8px #cccccc;
+  }
+.header .logo{
+  padding:0 15px;
+}
+
+.header .logo a{
+  font-size:30px;
+  color:#e91e63;
+  font-weight:bold;
+  font-family:'Great Vibes',cursive;
+  letter-spacing:12px;
+  text-transform:uppercase;
+  transition:all 0.5s ease;
+}
+
+.header.fixed .logo a{
+  color:#000000;
+
+}
+.header .hamburger-btn {
+    display: inline-block;
+    height: 40px;
+    width: 34px;
+    border: 6px solid #EC407A; /* Fix: Remove space between numeric value and unit */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.5s ease;
+    display:none;
+}
+
+.header.fixed .hamburger-btn {
+    border-color: #000000;
+    background-color: #37474F;
+}
+
+.header.fixed .hamburger-btn span:before,
+.header.fixed .hamburger-btn span:after,
+.header.fixed .hamburger-btn span {
+    background-color: #000000;
+}
+
+.header .hamburger-btn span {
+    display: block;
+    height: 1px;
+    width: 16px;
+    background-color: #263238;;
+    position: relative;
+}
+
+.header.fixed .hamburger-btn span {
+    background-color: #263238;
+}
+
+.header .hamburger-btn span:before,
+.header .hamburger-btn span:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    background-color: #263238;
+    transition: all 0.5s ease;
+}
+
+.header .hamburger-btn span:before {
+    top: -6px;
+}
+
+.header .hamburger-btn span:after {
+    top: 6px;
+}
+
+.header .nav{
+  padding:0 15px;
+
+}
+
+.header .nav ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.header .nav ul li{
+  display:inline-block;
+  margin-left:30px;
+}
+
+.header .nav ul li a{
+  display:block;
+  padding:25px 0;
+  color:#fb839e;
+  font-size:15px;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:color 0.5s ease;
+}
+.header.fixed .nav ul li a{
+  color:#555555;
+
+}
+.header .nav ul li a:hover{
+  color:#880E4F;
+}
+
+/* ... (Other styles) */
+
+
+
+/* ================================================header===== */
+section {
+    margin-top: 8rem; /* Set your desired margin */
+    text-align: center; /* Center the content */
+    min-height:90vh;
+    overflow-x: hidden;
+}
+.home-section {
+min-height:100vh
+}
+.home-section .row{
+min-height:40vh
+}
+
+.home-section .home-content{
+flex:0 0 100%;
+max-width:100%;
+padding:15px;
+padding-top:3rem;
+text-align:center;
+}
+
+.home-section .home-content p {
+    font-size: 24px;
+    color: #000000;
+    margin: 0 0 5px; /* Increase margin-bottom to create more gap */
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards;
+}
+
+.home-section .home-content h1 {
+    font-size: 80px;
+    color: #000000;
+    margin: 0;
+    text-transform: capitalize;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards 0.5s; /* Add a delay of 0.5s to start after p */
+}
+
+.home-section .home-content span {
+    font-size: 20px;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: 30px;
+    color: #000000;
+    padding: 7px 30px;
+    margin: 1px 0 0;
+    opacity: 0;
+    animation: fadeInTop 1s ease forwards 1s; /* Add a delay of 1s to start after h1 */
+}
+
+@keyframes fadeInTop {
+    0% {
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+/*.mySwiper img{
+width:100%;
+min-height:280px;
+object-fit:cover;
+margin-bottom:-50px;
+/*width:100%;
+min-height:300px;
+object-fit:cover;
+margin-top: 20px;  Adjust the margin to create the desired gap
+}
+*/
+img{
+mix-blend-mode:multiply;
+}
+.mySwiper {
+     position: relative;
+    max-width: 350px;
+    margin: -20px; /* Adjust the margin to create the desired gap */
+    border-width: 24px; /* Set the width of the border */
+    border-style: solid;
+    border-image: linear-gradient(to right, #fb839e, #fb839e); /* Use a linear gradient for a colorful border */
+    border-image-slice: 1; /* Slice the border into individual sections */
+
+    box-shadow: 0 0 20px #fb839e; /* Add a subtle shadow */
+    border-radius: 15px; /* Add rounded corners */
+    overflow: hidden; /* Hide overflowing content */
+    transition: box-shadow 0.3s cubic-bezier(0.25, 0.1, 0.22, 0.85); /* Smooth transition for the shadow */
+}
+
+.mySwiper:hover {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Darken the shadow on hover */
+}
+
+.mySwiper img {
+    width: 100%;
+    min-height: 280px;
+    object-fit: cover;
+    margin-bottom: -70px;
+    border-radius: 15px; /* Match the border radius of the container */
+}
+
+
+
+
+
+}
+/* ================================================couple===== */
+/* ================================================couple===== */
+.container{
+
+margin:auto;
+}
+.couple-section{
+    padding:30px; /* Adjust the padding-top value to create the desired space */
+}
+
+.row{
+display:flex;
+flex-wrap:wrap;
+}
+
+.section-title{
+font-size:40px;
+flex:0 0 100%;
+max-width:100%;
+padding:0 15px;
+text-align:center;
+font-family: 'Great Vibes', cursive;
+letter-spacing: 2px;
+margin-top: 20px; /* Adjust the margin-top value to move the title up or down */
+
+}
+.couple-section .couple{
+   flex:0 0 50%;
+   max-width:50%;
+   padding:0 60px;
+   text-align:center;
+   margin-bottom: 40px; /* Adjust the margin-bottom value to increase the gap between couple sections */
+}
+
+.row .section-title {
+    font-size: 40px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 2px;
+    margin-bottom: 100px; /* Adjust the margin-bottom value as needed */
+}
+
+.couple-section .couple img {
+max-width:290px;
+width:100%;
+border: 18px solid #fb839e; /* Adjust the border style and color as needed */
+border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+}
+.couple-section .couple h3{
+font-size:40px;
+margin:15px 0;
+color: #000000;
+text-transform: capitalize;
+font-family: 'Great Vibes', cursive;
+letter-spacing: 2px;
+}
+
+/* Base styles */
+.event-section {
+    padding: 30px 0;
+    background-color: pink;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.section-eve h2 {
+    font-size: 40px;
+    color: #000;
+    font-family: 'Great Vibes', cursive;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.eve {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.events-item {
+    flex: 0 0 calc(33.33% - 20px); /* Adjusted for three items */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+.event-item-inner {
+    text-align: center;
+}
+
+.event-item-inner h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.date,
+.time {
+    display: block;
+    font-size: 16px;
+    color: #ff6b6b;
+    margin-top: 5px;
+}
+
+.address {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+
+
+/* footer section */
+.footer {
+    padding: 120px 0 120px;
+}
+
+.footer .footer-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.footer .footer-content .couple-name {
+    width: 400px;
+    height: 400px;
+    /*border: 1px solid #cccccc;*/
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    z-index:1;
+}
+.footer .footer-content .couple-name img{
+position:absolute;
+left:0;
+top:0;
+width:100%;
+height:100%;
+z-index:-1;
+
+transform: rotate(99deg);
+}
+.footer .footer-content .couple-name h2{
+   font-size:40px;
+   font-family:"Great Vibes",cursive;
+   color:#000000;
+   margin:0;
+   font-weight:normal;
+   text-align:center;
+   text-transform:capitalize;
+}
+
+.footer .footer-content .couple-name h2 span{
+font-family:"Great Vibes",cursive;
+ font-weight:normal;
+ display :block;
+
+}
+.footer .footer-content   p{
+   font-size:40px;
+   font-family:"Great Vibes",cursive;
+   color:#000000;
+   margin:0;
+   font-weight:normal;
+   text-align:center;
+   text-transform:capitalize;
+
+}
+
+/* Media Query for Small Screens */
+@media only screen and (max-width: 767px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .header .logo{
+    padding: 8px 15px;
+  }
+
+  .header .hamburger-btn{
+    display:flex;
+    margin-right:15px;
+
+  }
+
+  .header .nav{
+    flex:0 0 100%;
+    max-width:100%;
+    background-color:#F48FB1;
+    border-top: 1px solid #cccccc;
+    display:none;
+
+  }
+
+  .header .nav ul li{
+    display:block;
+    margin-left:0;
+  }
+
+  .header .nav ul li a{
+    color:#555555;
+    padding:10px 0;
+  }
+
+  /* HEADER */
+  section {
+    margin-top: 4rem;
+  }
+  .home-section .home-content{
+    flex-direction: column;
+  }
+
+  .home-section .home-content h1 {
+    font-size: 40px;
+  }
+
+  .home-section .home-content span {
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+
+
+  .mySwiper{
+    position:relative;
+    max-width:400px;
+  }
+
+  .swiper-wrapper img{
+
+    width:100%;
+    min-height:300px;
+    object-fit:cover;
+
+
+  }
+
+  .mySwiper img{
+    width:100%;
+    min-height:300px;
+    object-fit:cover;
+  }
+
+  /* COUPLE SECTION */
+  .couple-section .couple {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
+
+  .section-title h1{
+    font-size: 36px;
+  }
+
+  .couple-section .couple img {
+    max-width: 100%;
+    border: 10px solid #fb839e;
+    border-radius: 10px;
+  }
+
+  /* EVENT SECTION */
+  .event-section .events-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .event-section .events-item-inner h3 {
+    font-size: 20px;
+  }
+
+  .event-section .date,
+  .event-section .time,
+  .event-section .address {
+    font-size: 14px;
+  }
+
+  /* FOOTER SECTION */
+  .footer .footer-content .couple-name {
+    width: 300px;
+    height: 300px;
+  }
+
+  .footer .footer-content .couple-name h2 {
+    font-size: 30px;
+  }
+
+  .footer .footer-content p {
+    font-size: 30px;
+  }
+}
+
+
+
+
+
